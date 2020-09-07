@@ -6,8 +6,9 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import connectDb from './config/db';
 import userRouter from './routes/user';
-import { cloudinaryConfig } from './config/cloudinaryConfig';
+// import { cloudinaryConfig } from './config/cloudinaryConfig';
 import path from 'path';
+import multer from 'multer';
 
 const pug = require('pug');
 
@@ -36,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(__dirname + '/public'));
 
 app.use('/uploads', express.static('uploads'));
-app.use('*', cloudinaryConfig);
+// app.use('*', cloudinaryConfig);
 
 app.use(cors());
 app.options('*', cors());
